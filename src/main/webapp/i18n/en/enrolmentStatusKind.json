@@ -1,0 +1,9 @@
+{
+    "rrmApp": {
+        "EnrolmentStatusKind" : {
+            "null": "",
+            "ENABLED": "ENABLED",
+            "DISABLED": "DISABLED"
+        }
+    }
+}

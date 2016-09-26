@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ReportingUnitAssociation.
+    -->
+    <changeSet id="20160926080515-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="reporting_unit_id"
+                                 baseTableName="reporting_unit_association"
+                                 constraintName="fk_reporting_unit_association_reporting_unit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reporting_unit"/>
+
+        <addForeignKeyConstraint baseColumnNames="respondent_id"
+                                 baseTableName="reporting_unit_association"
+                                 constraintName="fk_reporting_unit_association_respondent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="respondent"/>
+
+    </changeSet>
+</databaseChangeLog>

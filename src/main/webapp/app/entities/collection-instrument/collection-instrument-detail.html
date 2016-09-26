@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="rrmApp.collectionInstrument.detail.title">Collection Instrument</span> {{vm.collectionInstrument.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rrmApp.collectionInstrument.instrumentType">Instrument Type</span></dt>
+        <dd>
+            <span data-translate="{{'rrmApp.CollectionInstrumentKind.' + vm.collectionInstrument.instrumentType}}">{{vm.collectionInstrument.instrumentType}}</span>
+        </dd>
+        <dt><span data-translate="rrmApp.collectionInstrument.formType">Form Type</span></dt>
+        <dd>
+            <span>{{vm.collectionInstrument.formType}}</span>
+        </dd>
+        <dt><span data-translate="rrmApp.collectionInstrument.urn">Urn</span></dt>
+        <dd>
+            <span>{{vm.collectionInstrument.urn}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="collection-instrument-detail.edit({id:vm.collectionInstrument.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

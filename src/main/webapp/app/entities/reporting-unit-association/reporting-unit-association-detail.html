@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="rrmApp.reportingUnitAssociation.detail.title">Reporting Unit Association</span> {{vm.reportingUnitAssociation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rrmApp.reportingUnitAssociation.associationStatus">Association Status</span></dt>
+        <dd>
+            <span data-translate="{{'rrmApp.AssociationStatusKind.' + vm.reportingUnitAssociation.associationStatus}}">{{vm.reportingUnitAssociation.associationStatus}}</span>
+        </dd>
+        <dt><span data-translate="rrmApp.reportingUnitAssociation.reportingUnit">Reporting Unit</span></dt>
+        <dd>
+            <a ui-sref="reporting-unit-detail({id:vm.reportingUnitAssociation.reportingUnit.id})">{{vm.reportingUnitAssociation.reportingUnit.id}}</a>
+        </dd>
+        <dt><span data-translate="rrmApp.reportingUnitAssociation.respondent">Respondent</span></dt>
+        <dd>
+            <a ui-sref="respondent-detail({id:vm.reportingUnitAssociation.respondent.id})">{{vm.reportingUnitAssociation.respondent.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="reporting-unit-association-detail.edit({id:vm.reportingUnitAssociation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

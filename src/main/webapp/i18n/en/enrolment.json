@@ -1,0 +1,25 @@
+{
+    "rrmApp": {
+        "enrolment" : {
+            "home": {
+                "title": "Enrolments",
+                "createLabel": "Create a new Enrolment",
+                "createOrEditLabel": "Create or edit a Enrolment",
+                "search": "Search for Enrolment"
+            },
+            "created": "A new Enrolment is created with identifier {{ param }}",
+            "updated": "A Enrolment is updated with identifier {{ param }}",
+            "deleted": "A Enrolment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Enrolment {{ id }}?"
+            },
+            "detail": {
+                "title": "Enrolment"
+            },
+            "enrolmentStatus": "Enrolment Status",
+            "respondent": "Respondent",
+            "reportingUnitAssociation": "Reporting Unit Association",
+            "participatesIn": "Participates In"
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="rrmApp.enrolment.home.title">Enrolments</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="enrolment.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="rrmApp.enrolment.home.createLabel">
+                        Create new Enrolment
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enrolmentStatus"><span data-translate="rrmApp.enrolment.enrolmentStatus">Enrolment Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="respondent.id"><span data-translate="rrmApp.enrolment.respondent">Respondent</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reportingUnitAssociation.id"><span data-translate="rrmApp.enrolment.reportingUnitAssociation">Reporting Unit Association</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="participatesIn.id"><span data-translate="rrmApp.enrolment.participatesIn">Participates In</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enrolment in vm.enrolments track by enrolment.id">
+                    <td><a ui-sref="enrolment-detail({id:enrolment.id})">{{enrolment.id}}</a></td>
+                    <td data-translate="{{'rrmApp.EnrolmentStatusKind.' + enrolment.enrolmentStatus}}">{{enrolment.enrolmentStatus}}</td>
+                    <td>
+                        <a ui-sref="respondent-detail({id:enrolment.respondent.id})">{{enrolment.respondent.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="reporting-unit-association-detail({id:enrolment.reportingUnitAssociation.id})">{{enrolment.reportingUnitAssociation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="survey-detail({id:enrolment.participatesIn.id})">{{enrolment.participatesIn.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="enrolment-detail({id:enrolment.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enrolment.edit({id:enrolment.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enrolment.delete({id:enrolment.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

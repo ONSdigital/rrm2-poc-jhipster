@@ -1,0 +1,45 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myReportingUnitAssociationLabel" data-translate="rrmApp.reportingUnitAssociation.home.createOrEditLabel">Create or edit a Reporting Unit Association</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.reportingUnitAssociation.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.reportingUnitAssociation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.reportingUnitAssociation.associationStatus" for="field_associationStatus">Association Status</label>
+            <select class="form-control" name="associationStatus" ng-model="vm.reportingUnitAssociation.associationStatus" id="field_associationStatus">
+                <option value="ACTIVE" data-translate="rrmApp.AssociationStatusKind.ACTIVE">ACTIVE</option>
+                <option value="SUSPENDED" data-translate="rrmApp.AssociationStatusKind.SUSPENDED">SUSPENDED</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rrmApp.reportingUnitAssociation.reportingUnit" for="field_reportingUnit">Reporting Unit</label>
+            <select class="form-control" id="field_reportingUnit" name="reportingUnit" ng-model="vm.reportingUnitAssociation.reportingUnit" ng-options="reportingUnit as reportingUnit.id for reportingUnit in vm.reportingunits track by reportingUnit.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rrmApp.reportingUnitAssociation.respondent" for="field_respondent">Respondent</label>
+            <select class="form-control" id="field_respondent" name="respondent" ng-model="vm.reportingUnitAssociation.respondent" ng-options="respondent as respondent.id for respondent in vm.respondents track by respondent.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+{
+    "rrmApp": {
+        "collectionExercise" : {
+            "home": {
+                "title": "Collection Exercises",
+                "createLabel": "Create a new Collection Exercise",
+                "createOrEditLabel": "Create or edit a Collection Exercise",
+                "search": "Search for Collection Exercise"
+            },
+            "created": "A new Collection Exercise is created with identifier {{ param }}",
+            "updated": "A Collection Exercise is updated with identifier {{ param }}",
+            "deleted": "A Collection Exercise is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Collection Exercise {{ id }}?"
+            },
+            "detail": {
+                "title": "Collection Exercise"
+            },
+            "status": "Status",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "survey": "Survey",
+            "sample": "Sample"
+        }
+    }
+}

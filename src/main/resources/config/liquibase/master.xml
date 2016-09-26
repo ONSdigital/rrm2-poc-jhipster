@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080511_added_entity_Survey.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080512_added_entity_ReportingUnit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080513_added_entity_Respondent.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080514_added_entity_EnrolmentCode.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080515_added_entity_ReportingUnitAssociation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080516_added_entity_Enrolment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080517_added_entity_CollectionExercise.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080518_added_entity_CollectionResponse.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080519_added_entity_SampleSelection.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080520_added_entity_CollectionInstrument.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160926080514_added_entity_constraints_EnrolmentCode.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080515_added_entity_constraints_ReportingUnitAssociation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080516_added_entity_constraints_Enrolment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080517_added_entity_constraints_CollectionExercise.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080518_added_entity_constraints_CollectionResponse.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926080519_added_entity_constraints_SampleSelection.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160926143413_changelog.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160926143910_changelog.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

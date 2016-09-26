@@ -1,0 +1,23 @@
+{
+    "rrmApp": {
+        "enrolmentCode" : {
+            "home": {
+                "title": "Enrolment Codes",
+                "createLabel": "Create a new Enrolment Code",
+                "createOrEditLabel": "Create or edit a Enrolment Code",
+                "search": "Search for Enrolment Code"
+            },
+            "created": "A new Enrolment Code is created with identifier {{ param }}",
+            "updated": "A Enrolment Code is updated with identifier {{ param }}",
+            "deleted": "A Enrolment Code is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Enrolment Code {{ id }}?"
+            },
+            "detail": {
+                "title": "Enrolment Code"
+            },
+            "code": "Code",
+            "relatesTo": "Relates To"
+        }
+    }
+}

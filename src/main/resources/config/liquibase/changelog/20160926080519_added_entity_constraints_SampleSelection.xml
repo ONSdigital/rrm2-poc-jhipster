@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity SampleSelection.
+    -->
+    <changeSet id="20160926080519-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="collection_exercise_id"
+                                 baseTableName="sample_selection"
+                                 constraintName="fk_sample_selection_collection_exercise_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collection_exercise"/>
+
+        <addForeignKeyConstraint baseColumnNames="reporting_unit_id"
+                                 baseTableName="sample_selection"
+                                 constraintName="fk_sample_selection_reporting_unit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reporting_unit"/>
+
+        <addForeignKeyConstraint baseColumnNames="collection_instrument_id"
+                                 baseTableName="sample_selection"
+                                 constraintName="fk_sample_selection_collection_instrument_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collection_instrument"/>
+
+    </changeSet>
+</databaseChangeLog>

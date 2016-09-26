@@ -1,0 +1,24 @@
+{
+    "rrmApp": {
+        "collectionInstrument" : {
+            "home": {
+                "title": "Collection Instruments",
+                "createLabel": "Create a new Collection Instrument",
+                "createOrEditLabel": "Create or edit a Collection Instrument",
+                "search": "Search for Collection Instrument"
+            },
+            "created": "A new Collection Instrument is created with identifier {{ param }}",
+            "updated": "A Collection Instrument is updated with identifier {{ param }}",
+            "deleted": "A Collection Instrument is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Collection Instrument {{ id }}?"
+            },
+            "detail": {
+                "title": "Collection Instrument"
+            },
+            "instrumentType": "Instrument Type",
+            "formType": "Form Type",
+            "urn": "Urn"
+        }
+    }
+}

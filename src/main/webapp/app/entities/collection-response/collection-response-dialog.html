@@ -1,0 +1,41 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCollectionResponseLabel" data-translate="rrmApp.collectionResponse.home.createOrEditLabel">Create or edit a Collection Response</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.collectionResponse.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.collectionResponse.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.collectionResponse.status" for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="vm.collectionResponse.status" id="field_status">
+                <option value="NOT_STARTED" data-translate="rrmApp.ResponseStatusKind.NOT_STARTED">NOT_STARTED</option>
+                <option value="IN_PROGRESS" data-translate="rrmApp.ResponseStatusKind.IN_PROGRESS">IN_PROGRESS</option>
+                <option value="COMPLETED" data-translate="rrmApp.ResponseStatusKind.COMPLETED">COMPLETED</option>
+                <option value="NOT_REQUIRED" data-translate="rrmApp.ResponseStatusKind.NOT_REQUIRED">NOT_REQUIRED</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rrmApp.collectionResponse.relatesTo" for="field_relatesTo">Relates To</label>
+            <select class="form-control" id="field_relatesTo" name="relatesTo" ng-model="vm.collectionResponse.relatesTo" ng-options="sampleSelection as sampleSelection.id for sampleSelection in vm.relatestos | orderBy:'id' track by sampleSelection.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

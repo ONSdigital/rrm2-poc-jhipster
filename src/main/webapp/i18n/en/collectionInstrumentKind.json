@@ -1,0 +1,9 @@
+{
+    "rrmApp": {
+        "CollectionInstrumentKind" : {
+            "null": "",
+            "OFFLINE": "OFFLINE",
+            "EQ": "EQ"
+        }
+    }
+}

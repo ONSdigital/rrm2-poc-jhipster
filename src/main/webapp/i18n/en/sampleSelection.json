@@ -1,0 +1,24 @@
+{
+    "rrmApp": {
+        "sampleSelection" : {
+            "home": {
+                "title": "Sample Selections",
+                "createLabel": "Create a new Sample Selection",
+                "createOrEditLabel": "Create or edit a Sample Selection",
+                "search": "Search for Sample Selection"
+            },
+            "created": "A new Sample Selection is created with identifier {{ param }}",
+            "updated": "A Sample Selection is updated with identifier {{ param }}",
+            "deleted": "A Sample Selection is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sample Selection {{ id }}?"
+            },
+            "detail": {
+                "title": "Sample Selection"
+            },
+            "collectionExercise": "Collection Exercise",
+            "reportingUnit": "Reporting Unit",
+            "collectionInstrument": "Collection Instrument"
+        }
+    }
+}

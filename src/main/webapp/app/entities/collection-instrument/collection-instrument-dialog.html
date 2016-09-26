@@ -1,0 +1,45 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCollectionInstrumentLabel" data-translate="rrmApp.collectionInstrument.home.createOrEditLabel">Create or edit a Collection Instrument</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.collectionInstrument.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.collectionInstrument.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.collectionInstrument.instrumentType" for="field_instrumentType">Instrument Type</label>
+            <select class="form-control" name="instrumentType" ng-model="vm.collectionInstrument.instrumentType" id="field_instrumentType">
+                <option value="OFFLINE" data-translate="rrmApp.CollectionInstrumentKind.OFFLINE">OFFLINE</option>
+                <option value="EQ" data-translate="rrmApp.CollectionInstrumentKind.EQ">EQ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.collectionInstrument.formType" for="field_formType">Form Type</label>
+            <input type="text" class="form-control" name="formType" id="field_formType"
+                    ng-model="vm.collectionInstrument.formType"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.collectionInstrument.urn" for="field_urn">Urn</label>
+            <input type="text" class="form-control" name="urn" id="field_urn"
+                    ng-model="vm.collectionInstrument.urn"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

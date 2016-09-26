@@ -1,0 +1,25 @@
+{
+    "rrmApp": {
+        "reportingUnitAssociation" : {
+            "home": {
+                "title": "Reporting Unit Associations",
+                "createLabel": "Create a new Reporting Unit Association",
+                "createOrEditLabel": "Create or edit a Reporting Unit Association",
+                "search": "Search for Reporting Unit Association"
+            },
+            "created": "A new Reporting Unit Association is created with identifier {{ param }}",
+            "updated": "A Reporting Unit Association is updated with identifier {{ param }}",
+            "deleted": "A Reporting Unit Association is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Reporting Unit Association {{ id }}?"
+            },
+            "detail": {
+                "title": "Reporting Unit Association"
+            },
+            "associationStatus": "Association Status",
+            "reportingUnit": "Reporting Unit",
+            "respondent": "Respondent",
+            "enroled": "Enroled"
+        }
+    }
+}

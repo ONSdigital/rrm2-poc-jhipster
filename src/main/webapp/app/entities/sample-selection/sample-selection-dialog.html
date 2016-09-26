@@ -1,0 +1,44 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySampleSelectionLabel" data-translate="rrmApp.sampleSelection.home.createOrEditLabel">Create or edit a Sample Selection</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.sampleSelection.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.sampleSelection.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rrmApp.sampleSelection.collectionExercise" for="field_collectionExercise">Collection Exercise</label>
+            <select class="form-control" id="field_collectionExercise" name="collectionExercise" ng-model="vm.sampleSelection.collectionExercise" ng-options="collectionExercise as collectionExercise.id for collectionExercise in vm.collectionexercises track by collectionExercise.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rrmApp.sampleSelection.reportingUnit" for="field_reportingUnit">Reporting Unit</label>
+            <select class="form-control" id="field_reportingUnit" name="reportingUnit" ng-model="vm.sampleSelection.reportingUnit" ng-options="reportingUnit as reportingUnit.id for reportingUnit in vm.reportingunits track by reportingUnit.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rrmApp.sampleSelection.collectionInstrument" for="field_collectionInstrument">Collection Instrument</label>
+            <select class="form-control" id="field_collectionInstrument" name="collectionInstrument" ng-model="vm.sampleSelection.collectionInstrument" ng-options="collectionInstrument as collectionInstrument.id for collectionInstrument in vm.collectioninstruments track by collectionInstrument.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

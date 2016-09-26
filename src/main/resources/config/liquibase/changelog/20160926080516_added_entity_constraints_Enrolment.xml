@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Enrolment.
+    -->
+    <changeSet id="20160926080516-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="respondent_id"
+                                 baseTableName="enrolment"
+                                 constraintName="fk_enrolment_respondent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="respondent"/>
+
+        <addForeignKeyConstraint baseColumnNames="reporting_unit_association_id"
+                                 baseTableName="enrolment"
+                                 constraintName="fk_enrolment_reporting_unit_association_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reporting_unit_association"/>
+
+        <addForeignKeyConstraint baseColumnNames="participates_in_id"
+                                 baseTableName="enrolment"
+                                 constraintName="fk_enrolment_participates_in_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="survey"/>
+
+    </changeSet>
+</databaseChangeLog>

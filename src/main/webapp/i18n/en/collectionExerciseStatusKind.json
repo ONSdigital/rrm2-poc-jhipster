@@ -1,0 +1,9 @@
+{
+    "rrmApp": {
+        "CollectionExerciseStatusKind" : {
+            "null": "",
+            "UNPUBLISHED": "UNPUBLISHED",
+            "PUBLISHED": "PUBLISHED"
+        }
+    }
+}

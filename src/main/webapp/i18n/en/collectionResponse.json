@@ -1,0 +1,23 @@
+{
+    "rrmApp": {
+        "collectionResponse" : {
+            "home": {
+                "title": "Collection Responses",
+                "createLabel": "Create a new Collection Response",
+                "createOrEditLabel": "Create or edit a Collection Response",
+                "search": "Search for Collection Response"
+            },
+            "created": "A new Collection Response is created with identifier {{ param }}",
+            "updated": "A Collection Response is updated with identifier {{ param }}",
+            "deleted": "A Collection Response is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Collection Response {{ id }}?"
+            },
+            "detail": {
+                "title": "Collection Response"
+            },
+            "status": "Status",
+            "relatesTo": "Relates To"
+        }
+    }
+}

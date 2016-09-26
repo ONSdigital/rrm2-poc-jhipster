@@ -1,0 +1,26 @@
+{
+    "rrmApp": {
+        "respondent" : {
+            "home": {
+                "title": "Respondents",
+                "createLabel": "Create a new Respondent",
+                "createOrEditLabel": "Create or edit a Respondent",
+                "search": "Search for Respondent"
+            },
+            "created": "A new Respondent is created with identifier {{ param }}",
+            "updated": "A Respondent is updated with identifier {{ param }}",
+            "deleted": "A Respondent is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Respondent {{ id }}?"
+            },
+            "detail": {
+                "title": "Respondent"
+            },
+            "emailAddress": "Email Address",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "associatedWith": "Associated With",
+            "enroled": "Enroled"
+        }
+    }
+}

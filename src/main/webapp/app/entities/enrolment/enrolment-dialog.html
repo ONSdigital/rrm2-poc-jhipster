@@ -1,0 +1,51 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEnrolmentLabel" data-translate="rrmApp.enrolment.home.createOrEditLabel">Create or edit a Enrolment</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.enrolment.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.enrolment.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rrmApp.enrolment.enrolmentStatus" for="field_enrolmentStatus">Enrolment Status</label>
+            <select class="form-control" name="enrolmentStatus" ng-model="vm.enrolment.enrolmentStatus" id="field_enrolmentStatus">
+                <option value="ENABLED" data-translate="rrmApp.EnrolmentStatusKind.ENABLED">ENABLED</option>
+                <option value="DISABLED" data-translate="rrmApp.EnrolmentStatusKind.DISABLED">DISABLED</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rrmApp.enrolment.respondent" for="field_respondent">Respondent</label>
+            <select class="form-control" id="field_respondent" name="respondent" ng-model="vm.enrolment.respondent" ng-options="respondent as respondent.id for respondent in vm.respondents track by respondent.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rrmApp.enrolment.reportingUnitAssociation" for="field_reportingUnitAssociation">Reporting Unit Association</label>
+            <select class="form-control" id="field_reportingUnitAssociation" name="reportingUnitAssociation" ng-model="vm.enrolment.reportingUnitAssociation" ng-options="reportingUnitAssociation as reportingUnitAssociation.id for reportingUnitAssociation in vm.reportingunitassociations track by reportingUnitAssociation.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rrmApp.enrolment.participatesIn" for="field_participatesIn">Participates In</label>
+            <select class="form-control" id="field_participatesIn" name="participatesIn" ng-model="vm.enrolment.participatesIn" ng-options="survey as survey.id for survey in vm.participatesins | orderBy:'id' track by survey.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

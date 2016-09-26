@@ -1,0 +1,9 @@
+{
+    "rrmApp": {
+        "AssociationStatusKind" : {
+            "null": "",
+            "ACTIVE": "ACTIVE",
+            "SUSPENDED": "SUSPENDED"
+        }
+    }
+}

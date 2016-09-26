@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="rrmApp.sampleSelection.home.title">Sample Selections</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="sample-selection.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="rrmApp.sampleSelection.home.createLabel">
+                        Create new Sample Selection
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="collectionExercise.id"><span data-translate="rrmApp.sampleSelection.collectionExercise">Collection Exercise</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reportingUnit.id"><span data-translate="rrmApp.sampleSelection.reportingUnit">Reporting Unit</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="collectionInstrument.id"><span data-translate="rrmApp.sampleSelection.collectionInstrument">Collection Instrument</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sampleSelection in vm.sampleSelections track by sampleSelection.id">
+                    <td><a ui-sref="sample-selection-detail({id:sampleSelection.id})">{{sampleSelection.id}}</a></td>
+                    <td>
+                        <a ui-sref="collection-exercise-detail({id:sampleSelection.collectionExercise.id})">{{sampleSelection.collectionExercise.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="reporting-unit-detail({id:sampleSelection.reportingUnit.id})">{{sampleSelection.reportingUnit.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="collection-instrument-detail({id:sampleSelection.collectionInstrument.id})">{{sampleSelection.collectionInstrument.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="sample-selection-detail({id:sampleSelection.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sample-selection.edit({id:sampleSelection.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sample-selection.delete({id:sampleSelection.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

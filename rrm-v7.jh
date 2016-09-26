@@ -1,0 +1,120 @@
+/*
+ * The use of a Collection Instrument to obtain information on all 
+ * or part of a population of interest.
+ */
+entity Survey {
+    name String required
+}
+
+/*
+ * A Statistical Unit approached in connection with provision of a Response 
+ * (potentially on behalf of other Statistical Units as well as itself). 
+ * May be an individual or organisation.
+ */
+entity ReportingUnit {
+    uniqueReference String required
+    businessName String
+}
+
+entity Respondent {
+    emailAddress String required
+    firstName String
+    lastName String
+}
+
+/* 
+ * A code that is issued to a Reporting Unit to activate a
+ * Reporting Unit Association.
+ */
+entity EnrolmentCode {
+    code String required
+}
+/*
+ * A link between a Respondent and a Reporting Unit, which may be time 
+ * bound. (E.g. employment, marriage).
+ */
+entity ReportingUnitAssociation {
+    associationStatus AssociationStatusKind
+}
+
+enum AssociationStatusKind {
+    ACTIVE, SUSPENDED
+}
+
+/*
+ * Permission granted to provide data for a particular Survey on behalf 
+ * of a Reporting Unit, by virtue of the nature of a related Respondent 
+ * Unit Association.
+ */
+entity Enrolment {
+    enrolmentStatus EnrolmentStatusKind
+}
+
+enum EnrolmentStatusKind {
+    ENABLED, DISABLED
+}
+
+/*
+ * Time bound set of activities intended to acquire 
+ * data about Statistical Units via Collection Instruments.
+ */
+entity CollectionExercise {
+    status CollectionExerciseStatusKind
+    startDate LocalDate
+    endDate LocalDate
+}
+
+enum CollectionExerciseStatusKind {
+    UNPUBLISHED, PUBLISHED
+}
+
+entity CollectionResponse {
+    status ResponseStatusKind
+}
+
+enum ResponseStatusKind {
+    NOT_STARTED, IN_PROGRESS, COMPLETED, NOT_REQUIRED
+}
+
+entity SampleSelection {
+}
+
+/*
+ * Tool for requesting data from a Reporting Unit
+ */
+entity CollectionInstrument {
+    instrumentType CollectionInstrumentKind
+    formType String
+    urn String
+}
+
+enum CollectionInstrumentKind {
+    OFFLINE, EQ
+}
+
+relationship OneToOne {
+    Enrolment{participatesIn} to Survey,
+    CollectionResponse{relatesTo} to SampleSelection
+}
+
+relationship OneToMany {
+    Respondent{associatedWith} to ReportingUnitAssociation,
+    ReportingUnit{associatedWith} to ReportingUnitAssociation,
+    Respondent{enroled} to Enrolment,
+    ReportingUnitAssociation{enroled} to Enrolment,
+    CollectionExercise{sample} to SampleSelection,
+    Survey{enactedThrough} to CollectionExercise
+}
+
+relationship ManyToOne {
+    SampleSelection{reportingUnit} to ReportingUnit,
+    SampleSelection{collectionInstrument} to CollectionInstrument,
+    EnrolmentCode{relatesTo} to SampleSelection
+}
+
+
+// Set pagination options
+paginate all with pagination
+
+// Set service options to all except few
+// service all with serviceImpl
